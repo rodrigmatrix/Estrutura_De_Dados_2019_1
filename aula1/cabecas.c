@@ -25,6 +25,7 @@ nodeHead new_head(int element){
     nodeHead h;
     h->element = element;
     h->next = NULL;
+    h->previous = NULL;
     return h;
 }
 void print_array(nodeList list, int size);
