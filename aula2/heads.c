@@ -59,10 +59,18 @@ void print_array(nodeList list, int size){
     printf("%s","]\n");
 }
 
-void kill(nodeHead head){
+void kill(nodeList list, nodeHead head){
+    if(head == list->first){
+        list->first = head->next;
+    }
+    else if(head == list->last){
+        list->last= head->previous;
+    }
     head->previous->next = head->next;
     head->next->previous = head->previous;
     free(head);
+    
+    
 }
 
 int kill_and_select(nodeList list, int selected){
@@ -74,7 +82,7 @@ int kill_and_select(nodeList list, int selected){
         position++;
     }
     select = current->next->next->element;
-    kill(current->next);
+    kill(list, current->next);
     return select;
 }
 
