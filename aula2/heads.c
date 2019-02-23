@@ -69,17 +69,13 @@ void kill(nodeList list, nodeHead head){
     head->previous->next = head->next;
     head->next->previous = head->previous;
     free(head);
-    
-    
 }
 
 int kill_and_select(nodeList list, int selected){
     nodeHead current  = list->first;
-    int position = 1;
     int select = 0;
-    while(position != selected){
+    while(current->element != selected){
         current = current->next;
-        position++;
     }
     select = current->next->next->element;
     kill(list, current->next);
@@ -87,7 +83,7 @@ int kill_and_select(nodeList list, int selected){
 }
 
 int main(){
-    int size,selected;
+    int size, selected;
     scanf("%d",&size);
     scanf("%d",&selected);
     nodeList list;
@@ -100,7 +96,6 @@ int main(){
         size--;
         printf("Selecionado: %d\n",selected);
         print_array(list, size);
-    }  
-
+    }
 }
 
