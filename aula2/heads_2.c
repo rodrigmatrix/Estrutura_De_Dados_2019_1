@@ -109,7 +109,6 @@ int main(){
     list = new_list();
     fill_list(list, size);
     setup_sign(list, fase);
-    printf("Selecionado: %d\n",selected);
     print_array(list, size);
     // while(size != 1){
     //     selected = kill_and_select(list, selected);
