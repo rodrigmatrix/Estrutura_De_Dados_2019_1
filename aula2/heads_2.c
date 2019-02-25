@@ -70,11 +70,20 @@ void kill(nodeList list, nodeHead head){
     free(head);
 }
 
-void setup_signal(nodeList list, int sig){
+int change_sign(int number){
+    if(number > 0 ){
+        return (number + 1) * -1;
+    }
+    else{
+        return (number * -1) + 1;
+    }
+}
+
+void setup_sign(nodeList list, int sig){
     list->first->element = sig;
     nodeHead current = list->first->next;
-    while(current != list->first){
-        current->element = (current->previous->element + 1) * (-1);
+    while(current != list->first){ 
+        current->element = change_sign(current->previous->element);
         current = current->next;
     }
 }
@@ -99,7 +108,7 @@ int main(){
     nodeList list;
     list = new_list();
     fill_list(list, size);
-    setup_signal(list, fase);
+    setup_sign(list, fase);
     printf("Selecionado: %d\n",selected);
     print_array(list, size);
     // while(size != 1){
