@@ -70,6 +70,15 @@ void kill(nodeList list, nodeHead head){
     free(head);
 }
 
+void setup_signal(nodeList list, int sig){
+    list->first->element = sig;
+    nodeHead current = list->first->next;
+    while(current != list->first){
+        current->element = (current->previous->element + 1) * (-1);
+        current = current->next;
+    }
+}
+
 int kill_and_select(nodeList list, int selected){
     nodeHead current  = list->first;
     int select = 0;
@@ -90,13 +99,14 @@ int main(){
     nodeList list;
     list = new_list();
     fill_list(list, size);
+    setup_signal(list, fase);
     printf("Selecionado: %d\n",selected);
     print_array(list, size);
-    while(size != 1){
-        selected = kill_and_select(list, selected);
-        size--;
-        printf("Selecionado: %d\n",selected);
-        print_array(list, size);
-    }
+    // while(size != 1){
+    //     selected = kill_and_select(list, selected);
+    //     size--;
+    //     printf("Selecionado: %d\n",selected);
+    //     print_array(list, size);
+    // }
 }
 
