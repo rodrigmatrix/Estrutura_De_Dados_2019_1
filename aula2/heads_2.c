@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 typedef struct head * nodeHead;
 struct head {
@@ -83,9 +82,11 @@ int kill_and_select(nodeList list, int selected){
 }
 
 int main(){
-    int size, selected;
+    int size, selected, fase;
+    
     scanf("%d",&size);
     scanf("%d",&selected);
+    scanf("%d",&fase);
     nodeList list;
     list = new_list();
     fill_list(list, size);
