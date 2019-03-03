@@ -9,10 +9,12 @@ void burn(){
 }
 
 void show_forest(int nl, int nc, char forest[nl][nc]){
+    system("clear");
     for(int i = 0; i < nl; i++){
         for(int j = 0; j < nc; j++){
-            printf("%c ", forest[i][j]);
+            printf("%c", forest[i][j]);
         }
+        puts("");
     }
 }
 
