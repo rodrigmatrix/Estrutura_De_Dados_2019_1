@@ -8,6 +8,13 @@ void burn(){
     
 }
 
+void show_forest(int nl, int nc, char forest[nl][nc]){
+    for(int i = 0; i < nl; i++){
+        for(int j = 0; j < nc; j++){
+            printf("%c ", forest[i][j]);
+        }
+    }
+}
 
 int main(){
     int nl;
@@ -15,21 +22,14 @@ int main(){
     int l;
     int c;
 
-    puts("Número de linhas:");
-    scanf("%d",&nl);
-    puts("Número de colunas:");
-    scanf("%d",&nl);
-    char array[nl][nc];
-    puts("Floresta:");
-    for(int i = 0; i<nl; i++){
-        for(int j = 0; j<nc; j++){
-            scanf("%c",&array[i][j]);
+    scanf("%d %d %d %d", &nl, &nc, &l, &c);
+    char forest[nl][nc];
+    for(int i = 0; i < nl; i++){
+        for(int j = 0; j < nc; j++){
+            scanf(" %c", &forest[i][j]);
         }
     }
-    puts("Linha para queimar:");
-    scanf("%d",&nl);
-    puts("Coluna para queimar:");
-    scanf("%d",&nl);
+    show_forest(nl, nc, forest);
 
 
 }
