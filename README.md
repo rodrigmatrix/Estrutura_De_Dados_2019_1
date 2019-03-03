@@ -5,12 +5,33 @@ Aluno: Rodrigo Gomes Resende
 
 Algoritmos da disciplina de estrutura de dados.
 
-Relatórios:
-01_Cabecas
+## 01 - nome do trabalho
 
+- O que você fez
+    - fiz bla bla bla
+- Com quem e como você fez
+    - fiz bla bla bla
+- O que aprendeu e sabe fazer
+- O que tem dificuldade ainda
+- Quanto tempo levou pra fazer a atividade
 
-02_queimada
+## 02 - nome do trabalho
 
+- O que você fez
+    - fiz bla bla bla
+- Com quem e como você fez
+    - fiz bla bla bla
+- O que aprendeu e sabe fazer
+- O que tem dificuldade ainda
+- Quanto tempo levou pra fazer a atividade
 
-03_labirinto
+## 03 - nome do trabalho
+
+- O que você fez
+    - fiz bla bla bla
+- Com quem e como você fez
+    - fiz bla bla bla
+- O que aprendeu e sabe fazer
+- O que tem dificuldade ainda
+- Quanto tempo levou pra fazer a atividade
 
