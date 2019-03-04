@@ -24,7 +24,8 @@ void burn(int nl, int nc, int l, int c, char forest[nl][nc]){
         return;
     }
     show_forest(nl, nc, forest);
-    usleep(700000);
+    sleep(1);
+    // FIXME voltando para a linha anterior e queimando quem n deveria
     burn(nl, nc, l, c-1, forest);
     burn(nl, nc, l-1, c, forest);
     burn(nl, nc, l, c+1, forest);
