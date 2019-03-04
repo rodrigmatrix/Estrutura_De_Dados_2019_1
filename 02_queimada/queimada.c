@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+
 const char tree = '#';
 const char empty = '.';
 const char burned = 'o';
@@ -22,7 +24,7 @@ void burn(int nl, int nc, int l, int c, char forest[nl][nc]){
         return;
     }
     show_forest(nl, nc, forest);
-    scanf("");
+    usleep(700000);
     burn(nl, nc, l, c-1, forest);
     burn(nl, nc, l-1, c, forest);
     burn(nl, nc, l, c+1, forest);
