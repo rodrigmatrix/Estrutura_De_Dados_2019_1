@@ -14,7 +14,7 @@ void show_forest(int nl, int nc, char forest[nl][nc]){
         for(int j = 0; j < nc; j++){
             printf("%c", forest[i][j]);
         }
-        puts("");
+        printf("\n");
     }
 }
 
