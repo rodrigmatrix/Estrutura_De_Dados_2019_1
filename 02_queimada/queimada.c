@@ -4,10 +4,6 @@ const char tree = '#';
 const char empty = '.';
 const char burned = 'o';
 
-void burn(){
-    
-}
-
 void show_forest(int nl, int nc, char forest[nl][nc]){
     system("clear");
     for(int i = 0; i < nl; i++){
@@ -16,6 +12,21 @@ void show_forest(int nl, int nc, char forest[nl][nc]){
         }
         printf("\n");
     }
+}
+
+void burn(int nl, int nc, int l, int c, char forest[nl][nc]){
+    if(forest[l][c] == tree){
+        forest[l][c] = burned;
+    }
+    else{
+        return;
+    }
+    show_forest(nl, nc, forest);
+    scanf("");
+    burn(nl, nc, l, c-1, forest);
+    burn(nl, nc, l-1, c, forest);
+    burn(nl, nc, l, c+1, forest);
+    burn(nl, nc, l+1, c, forest);
 }
 
 int main(){
@@ -32,6 +43,6 @@ int main(){
         }
     }
     show_forest(nl, nc, forest);
-
+    burn(nl, nc, l, c, forest);
 
 }
