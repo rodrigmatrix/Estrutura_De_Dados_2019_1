@@ -33,7 +33,7 @@ void burn(int nl, int nc, int l, int c, char forest[nl][nc]){
 }
 
 int main(){
-    int nl;
+    int nl ;
     int nc;
     int l;
     int c;
