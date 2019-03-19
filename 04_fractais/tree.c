@@ -9,12 +9,12 @@ void tree(int x, int y, float ang, int size){
         xd_thick_line(x, y, xf, yf, 5);
         return;
     }
-    else if(size > end && size < 20){
-        xs_color((XColor){70,164,108}); 
-        xd_thick_line(x, y, xf, yf, 5);
-        // xs_color((XColor){39,109,155});
-        // xd_thick_line(10, 40, xf, yf, 5);
-    }
+    // else if(size > end && size < 20){
+    //     xs_color((XColor){70,164,108}); 
+    //     xd_thick_line(x, y, xf, yf, 5);
+    //     // xs_color((XColor){39,109,155});
+    //     // xd_thick_line(10, 40, xf, yf, 5);
+    // }
     else{
         xs_color((XColor){91,44,6});
         xd_thick_line(x, y, xf, yf, 5);
