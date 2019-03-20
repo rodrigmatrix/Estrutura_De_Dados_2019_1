@@ -16,7 +16,7 @@ Algoritmos da disciplina de estrutura de dados.
 - O que tem dificuldade ainda
     - Controlar a memória do programa para não dar seg fault.
 - Quanto tempo levou pra fazer a atividade
-    - 2 dias.
+    - 2 horas.
 
 ## 02 - Queimada
 
@@ -29,7 +29,7 @@ Algoritmos da disciplina de estrutura de dados.
 - O que tem dificuldade ainda
     - Controle de posições não existentes na matriz.
 - Quanto tempo levou pra fazer a atividade
-    - 2 dias.
+    - 1 hora.
 
 ## 03 - Labirinto
 
