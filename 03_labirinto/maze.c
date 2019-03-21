@@ -21,11 +21,11 @@ void shuffle(Pos vet[], int size){
 void print_maze(int nl, int nc, char maze[nl][nc]){
     for(int i = 0; i < nl; i++){
         for(int j = 0; j < nc; j++){
-            if(maze[i][j] == path){
+            if(maze[i][j] == wall){
                 printf("█");
             }
             else{
-                printf("%c", maze[i][j]);
+                printf(" ");
             }
         }
         puts("");
@@ -46,11 +46,11 @@ void drill_maze(int nl, int nc, char maze[nl][nc], int l, int c){
     for(int i = 0; i < 4; i++){
         line = neibs[i].l;
         col = neibs[i].c;
-        if(maze[line][col] == path){
+        if(maze[line][col] != path){
             qtd++;
         }
     }
-    if(qtd > 3){
+    if(qtd < 3){
         return;
     }
     maze[l][c] = path;
