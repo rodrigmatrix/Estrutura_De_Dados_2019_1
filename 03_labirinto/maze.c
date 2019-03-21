@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <time.h>
 const char wall = 'H';
 const char path = '#';
@@ -32,21 +33,37 @@ void print_maze(int nl, int nc, char maze[nl][nc]){
     }
 }
 
-void drill_maze(int nl, int nc, char maze[nl][nc], int l, int c){
-    if((l < 0) || (l >= nl) || (c < 0) || (c >= nc)){
-        return;
+bool equals(int nl, int nc, char maze[nl][nc], int l, int c, char value){
+    if((l < 0) || (l >= nl) || (c < 0) || (c >= nc))
+        return false;
+    return maze[l][c] == value;
+}
+
+bool find_exit(int nl, int nc, char maze[nl][nc], int lexit, int cexit){
+    if(!equals(nl, nc, maze, lexit, cexit, path)){
+        return false;
     }
-    if(maze[l][c] == path){
+    if(maze_visited[lexit][cexit] == path){
+        return false;
+    }
+    maze_visited[lexit][cexit] = path;
+    if((nl == lexit) && (nc == cexit)){
+        return true;
+    }
+    for(){
+        
+    }
+}
+
+void drill_maze(int nl, int nc, char maze[nl][nc], int l, int c){
+    if(!equals(nl, nc, maze, l, c, wall)){
         return;
     }
     Pos neibs[] = get_neibs(l, c);
+    shuffle(neibs, 4);
     int qtd = 0;
-    int line;
-    int col;
     for(int i = 0; i < 4; i++){
-        line = neibs[i].l;
-        col = neibs[i].c;
-        if(maze[line][col] != path){
+        if(equals(nl, nc, maze, neibs[i].l, neibs[i].c, wall)){
             qtd++;
         }
     }
@@ -54,9 +71,9 @@ void drill_maze(int nl, int nc, char maze[nl][nc], int l, int c){
         return;
     }
     maze[l][c] = path;
-    shuffle(neibs, 4);
-    for(int i = 0; i < 4; i++)
-        drill_maze(nl, nc, maze, neibs[i].l, neibs[i].c);  
+    for(int i = 0; i < 4; i++){
+        drill_maze(nl, nc, maze, neibs[i].l, neibs[i].c); 
+    }  
 }
 
 int main(){
