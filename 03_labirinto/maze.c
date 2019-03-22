@@ -4,6 +4,8 @@
 #include <time.h>
 const char wall = 'H';
 const char path = '#';
+const char point = '.';
+const char target = 'x';
 typedef struct _Pos{
     int l;
     int c;
@@ -25,6 +27,12 @@ void print_maze(int nl, int nc, char maze[nl][nc]){
             if(maze[i][j] == wall){
                 printf("█");
             }
+            else if(maze[i][j] == point){
+                printf(".");
+            }
+            else if(maze[i][j] == target){
+                printf("x");
+            }
             else{
                 printf(" ");
             }
@@ -39,20 +47,34 @@ bool equals(int nl, int nc, char maze[nl][nc], int l, int c, char value){
     return maze[l][c] == value;
 }
 
-bool find_exit(int nl, int nc, char maze[nl][nc], int lexit, int cexit){
-    if(!equals(nl, nc, maze, lexit, cexit, path)){
+bool find_exit(int nl, int nc, char maze[nl][nc], bool maze_visited[nl][nc], int l, int c, int lexit, int cexit){
+    if(maze[l][c] != path){
         return false;
     }
-    if(maze_visited[lexit][cexit] == path){
+    if(maze_visited[l][c]){
         return false;
     }
-    maze_visited[lexit][cexit] = path;
-    if((nl == lexit) && (nc == cexit)){
+    maze_visited[l][c] = true;
+    maze[l][c] = point;
+    if((l == lexit) && (c == cexit)){
         return true;
     }
-    for(){
-        
+    Pos neibs[] = get_neibs(l, c);
+    shuffle(neibs, 4);
+    bool find = false;
+    for(int i = 0; i < 4; i++){
+        find = find_exit(nl, nc, maze, maze_visited,  neibs[i].l, neibs[i].c, lexit, cexit);
+        if(find){
+            break;
+        }
     }
+    if(find){
+        return true;
+    }
+    else{
+        maze[l][c] = path;
+        return false;
+    }  
 }
 
 void drill_maze(int nl, int nc, char maze[nl][nc], int l, int c){
@@ -78,8 +100,8 @@ void drill_maze(int nl, int nc, char maze[nl][nc], int l, int c){
 
 int main(){
     srand(time(NULL));
-    int nl = 8;
-    int nc = 60;
+    int nl = 10;
+    int nc = 30;
     char maze[nl][nc];
     int l = 1;
     int c = 1;
@@ -88,6 +110,11 @@ int main(){
             maze[i][j] = wall;
         }
     }
+    bool maze_visited[nl][nc];
     drill_maze(nl, nc, maze, l, c);
+    print_maze(nl, nc, maze);
+    find_exit(nl, nc, maze, maze_visited, 1, 1, 8, 1);
+    maze[1][1] = target;
+    maze[8][1] = target;
     print_maze(nl, nc, maze);
 }

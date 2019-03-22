@@ -34,20 +34,17 @@ Algoritmos da disciplina de estrutura de dados.
 ## 03 - Labirinto
 
 - O que você fez
-    - Criei o labirinto
+    - Criei o labirinto e encontrei a saída.
 - Com quem e como você fez
-    - fiz bla bla bla
+    - Fiz sozinho me baseando no código passado em sala.
 - O que aprendeu e sabe fazer
+    - Aprendi melhor conceitos de recursão e limitações do C.
 - O que tem dificuldade ainda
+    - Gerar o labirinto  e etender melhor os conceitos de posicionamento na matriz.
 - Quanto tempo levou pra fazer a atividade
+    - 2 dia.
 
 ## 03 - Fractais
 
-- O que você fez
-    - Criei o labirinto
-- Com quem e como você fez
-    - fiz bla bla bla
-- O que aprendeu e sabe fazer
-- O que tem dificuldade ainda
-- Quanto tempo levou pra fazer a atividade
+
 
