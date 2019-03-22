@@ -40,9 +40,9 @@ Algoritmos da disciplina de estrutura de dados.
 - O que aprendeu e sabe fazer
     - Aprendi melhor conceitos de recursão e limitações do C.
 - O que tem dificuldade ainda
-    - Gerar o labirinto  e etender melhor os conceitos de posicionamento na matriz.
+    - Gerar o labirinto  e entender melhor os conceitos de posicionamento na matriz.
 - Quanto tempo levou pra fazer a atividade
-    - 2 dia.
+    - 2 dias.
 
 ## 03 - Fractais
 
