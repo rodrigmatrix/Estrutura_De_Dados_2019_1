@@ -1,31 +1,30 @@
 #include "../xpaint.h"
-const int end = 10;
+const int end = 1;
 
-void tree(int x, int y, float ang, int size){
-    int xf = x + size * xm_cos(ang);
-    int yf = y - size * xm_sin(ang);
+void circle(int x, int y, int size){
+    xs_color((XColor){xm_rand(20,50),xm_rand(0,200),xm_rand(0,255)});
     if(size < end){
-        // xs_color((XColor){70,164,108});
-        // xd_thick_line(x, y, xf, yf, 5);
         return;
     }
-    else{
-        xs_color((XColor){xm_rand(0,255),xm_rand(0,255),xm_rand(0,255)});
-        xd_filled_circle(50, 50, 40);
+    float ang = 145;
+    for(int i = 0; i < 6; i++){
+        int xf = x + size * xm_cos(ang);
+        int yf = y - size * xm_sin(ang);
+        xd_circle(xf, yf, size/3);
+        circle(xf , yf, size/3);
+        ang += (360/6);
     }
-    tree(xf, yf, ang - xm_rand(27, 30), size - xm_rand(5, 15));
-    tree(xf, yf, ang + xm_rand(27, 30), size - xm_rand(5, 15));
 }
 int main(){
     int l = 500;
     int a = 500;
     x_open(l, a);
     x_clear(BLACK);
-    float ang = 90;
     int x = l/2;
-    int y = a-10;
-    float size = 90; 
-    tree(x, y, ang, size);
+    int y = a/2;
+    float size = 180;
+    xd_circle(x, y, size);
+    circle(x, y, size);
     x_save("circle");
     x_close();
 }
