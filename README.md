@@ -46,5 +46,15 @@ Algoritmos da disciplina de estrutura de dados.
 
 ## 03 - Fractais
 
+- O que você fez
+    - Árvore, trigo e círculo.
+- Com quem e como você fez
+    - Pedi ajuda para alguns amigos pois estava com muita dificuldade em entender as posições do xf e yf.
+- O que aprendeu e sabe fazer
+    - Aprendi de forma visual o trabalho da recursão. Manipular a biblioteca xpaint.
+- O que tem dificuldade ainda
+    - Posicionamento de x,y,xf,yf para fazer os desenhos.
+- Quanto tempo levou pra fazer a atividade
+    - 1 dia.
 
 
