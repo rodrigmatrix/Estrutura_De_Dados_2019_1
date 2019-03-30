@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "xpaint.h": "c"
+        "xpaint.h": "c",
+        "new": "cpp"
     }
 }

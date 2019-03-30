@@ -1,1 +1,1 @@
-CFLAGS = g++
+CPPFLAGS = -Wall
