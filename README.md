@@ -57,4 +57,7 @@ Algoritmos da disciplina de estrutura de dados.
 - Quanto tempo levou pra fazer a atividade
     - 1 dia.
 
+## 03 - Cabeças com lista
+
+
 

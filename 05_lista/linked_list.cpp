@@ -14,7 +14,6 @@ struct List{
     int size;
     List(int size){
         this->size = size;
-        fill_list();
     }
 
     void new_node(int element){
@@ -36,9 +35,10 @@ struct List{
         }
         
     }
-    void fill_list(){
+    void fill_list(int s){
         for(int i = 0; i < this->size; i++){
-            new_node(i+1);
+            new_node((i+1) * (s));
+            s *= -1;
         }
     }
     void show_list(){
@@ -51,11 +51,21 @@ struct List{
         while(node != this->first);
         cout << "]";
     }
+    void kill(){
+
+    }
     
 
 };
 
 int main(){
-    List list(10);
+    int size = 1;
+    int selected = 1;
+    int s = 1;
+    cin >> size;
+    cin >> selected;
+    cin >> s;
+    List list(size);
+    list.fill_list(s);
     list.show_list();
 }
