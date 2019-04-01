@@ -35,12 +35,14 @@ struct List{
         }
         
     }
+    
     void fill_list(int s){
         for(int i = 0; i < this->size; i++){
             new_node((i+1) * (s));
             s *= -1;
         }
     }
+
     void show_list(int selected){
         Node * node = this->first;
         cout << "[ ";
@@ -74,18 +76,29 @@ struct List{
             node = node->next;
         } // [1 -2 3 -4]
         if(node->element > 0){
-            if(node == this->first){
-                this->first = ;
-            }
             Node * node_kill = node->next;
+            if(node_kill == this->first){
+                this->first = node_kill->next;
+            }
+            if(node_kill == this->last){
+                this->last = node_kill->next;
+            }
             node->next = node_kill->next;
             selected = node->next->element;
+            this->size--;
             free(node_kill);
         }
         else{
             Node * node_kill = node->previous;
+            if(node_kill == this->first){
+                this->first = node_kill->next;
+            }
+            if(node_kill == this->last){
+                this->last = node_kill->previous;
+            }
             node->previous = node_kill->previous;
             selected = node->previous->element;
+            this->size--;
             free(node_kill);
         }
         kill(selected);
