@@ -41,18 +41,54 @@ struct List{
             s *= -1;
         }
     }
-    void show_list(){
-        Node * node = this->first; 
+    void show_list(int selected){
+        Node * node = this->first;
         cout << "[ ";
         do{
-            cout << node->element << " ";
+            if(node->element == selected){
+                if(selected > 0){
+                    cout << node->element << "> ";
+                }
+                else{
+                    cout << "<" << node->element << " ";
+                }
+            }
+            else{
+                cout << node->element << " ";
+            }
             node = node->next;
         }
         while(node != this->first);
-        cout << "]";
+        cout << "]" << endl;
     }
-    void kill(){
-
+    void kill(int selected){
+        if(this->size == 1){
+            return;
+        }
+        this->show_list(selected);
+        Node * node = this->first;
+        while(true){
+            if(node->element == selected){
+                break;
+            }
+            node = node->next;
+        } // [1 -2 3 -4]
+        if(node->element > 0){
+            if(node == this->first){
+                this->first = ;
+            }
+            Node * node_kill = node->next;
+            node->next = node_kill->next;
+            selected = node->next->element;
+            free(node_kill);
+        }
+        else{
+            Node * node_kill = node->previous;
+            node->previous = node_kill->previous;
+            selected = node->previous->element;
+            free(node_kill);
+        }
+        kill(selected);
     }
     
 
@@ -67,5 +103,5 @@ int main(){
     cin >> s;
     List list(size);
     list.fill_list(s);
-    list.show_list();
+    list.kill(selected);
 }
