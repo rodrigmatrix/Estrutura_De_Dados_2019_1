@@ -58,6 +58,13 @@ Algoritmos da disciplina de estrutura de dados.
     - 1 dia.
 
 ## 03 - Cabeças com lista
-
-
-
+- O que você fez
+    - Criei uma lista circular e resolvi o exercício da princesa usando ela.
+- Com quem e como você fez
+    - Fiz sozinho me baseando nos conceitos de lista vistos em sala.
+- O que aprendeu e sabe fazer
+    - Aprendi como controlar ponteiros de lista e tudo que ela pode fazer.
+- O que tem dificuldade ainda
+    - Verificar se o selecionado é positivo ou negativo na lista na primeira execução.
+- Quanto tempo levou pra fazer a atividade
+    - 2 dias.
