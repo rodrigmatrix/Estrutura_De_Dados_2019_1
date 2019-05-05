@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "xpaint.h": "c",
-        "new": "cpp",
-        "iostream": "cpp",
-        "ostream": "cpp"
-    }
-}
