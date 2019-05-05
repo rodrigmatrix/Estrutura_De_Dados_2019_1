@@ -7,7 +7,7 @@ class Customer{
     int documents;
     int tolerance;
 
-    Customer(string id, int tolerance, int documents){
+    Customer(string id, int documents, int tolerance){
         this->id = id;
         this->documents = documents;
         this->tolerance = tolerance;
