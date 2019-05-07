@@ -10,7 +10,7 @@ int main(){
         string line, cmd;
         getline(cin, line);
         stringstream ui(line);
-        
+
         ui >> cmd;
         if(cmd == "end"){
             break;
@@ -31,7 +31,9 @@ int main(){
         }
         else if(cmd == "show"){
             b.show_checkout();
+            cout << "in:";
             b.show_entrance();
+            cout << "out:";
             b.show_exit();
             cout << endl;
         }
