@@ -44,7 +44,7 @@ Algoritmos da disciplina de estrutura de dados.
 - Quanto tempo levou pra fazer a atividade
     - 2 dias.
 
-## 03 - Fractais
+## 04 - Fractais
 
 - O que você fez
     - Árvore, trigo e círculo.
@@ -57,7 +57,7 @@ Algoritmos da disciplina de estrutura de dados.
 - Quanto tempo levou pra fazer a atividade
     - 1 dia.
 
-## 03 - Cabeças com lista
+## 05 - Cabeças com lista
 - O que você fez
     - Criei uma lista circular e resolvi o exercício da princesa usando ela.
 - Com quem e como você fez
@@ -68,3 +68,15 @@ Algoritmos da disciplina de estrutura de dados.
     - Verificar se o selecionado é positivo ou negativo na lista na primeira execução.
 - Quanto tempo levou pra fazer a atividade
     - 2 dias.
+
+## 08 - Banco
+- O que você fez
+    - Todo o trabalho
+- Com quem e como você fez
+    - Fiz sozinho.
+- O que aprendeu e sabe fazer
+    - Aprendi a usar filas no cpp e o stringstream
+- O que tem dificuldade ainda
+    - Controle de memória
+- Quanto tempo levou pra fazer a atividade
+    - 1 dia.
