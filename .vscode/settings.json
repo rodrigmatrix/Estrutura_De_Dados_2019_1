@@ -12,6 +12,7 @@
         "initializer_list": "cpp",
         "iterator": "cpp",
         "string": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "__tuple": "cpp"
     }
 }
