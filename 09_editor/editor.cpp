@@ -1,12 +1,14 @@
 #include <iostream>
 #include <iterator>
 #include <list>
+#include <utility>
 #include <sstream>
 using namespace std;
 
 struct Ambient{
     list<char> texto;
     list<char>::iterator cursor;
+    list<pair<char*, char> > erased;
 
     Ambient(){
         this->cursor = texto.begin();
@@ -31,7 +33,22 @@ struct Ambient{
         this->cursor = this->cursor++;
     }
 
-    void deleteChar(){
+    void deleteFront(){
+        auto del = this->cursor;
+        this->cursor++;
+        this->texto.erase(del);
+    }
+
+    void ctrlZ(){
+        
+    }
+
+    void deleteBackspace(){
+        if((*this->cursor) == this->texto.front()){
+            return;
+        }
+        // auto pair = make_pair(this->cursor, *(this->cursor));
+        // this->erased.insert(pair.first, pair.second, this->cursor);
         auto del = this->cursor;
         del--;
         this->texto.erase(del);
@@ -65,10 +82,11 @@ int main(){
                 break;
 
                 case 'B':
-                editor->deleteChar();
+                editor->deleteBackspace();
                 break;
 
                 case 'D':
+                editor->deleteFront();
                 break;
 
                 case '>':
@@ -90,7 +108,7 @@ int main(){
 
                 case 'V':
                 break;
-            
+
                 default:
                 editor->insertChar(cmd);
                 break;

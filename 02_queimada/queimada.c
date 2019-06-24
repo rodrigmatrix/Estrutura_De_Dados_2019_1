@@ -17,6 +17,9 @@ void show_forest(int nl, int nc, char forest[nl][nc]){
 }
 
 void burn(int nl, int nc, int l, int c, char forest[nl][nc]){
+    if((l < 0) || (l >= nl) || (c < 0) || (c >= nc)){
+        return;
+    }  
     if(forest[l][c] == tree){
         forest[l][c] = burned;
     }
@@ -24,7 +27,7 @@ void burn(int nl, int nc, int l, int c, char forest[nl][nc]){
         return;
     }
     show_forest(nl, nc, forest);
-    sleep(1);
+    sleep(100);
     // FIXME voltando para a linha anterior e queimando quem n deveria
     burn(nl, nc, l, c-1, forest);
     burn(nl, nc, l-1, c, forest);
@@ -37,7 +40,6 @@ int main(){
     int nc;
     int l;
     int c;
-
     scanf("%d %d %d %d", &nl, &nc, &l, &c);
     char forest[nl][nc];
     for(int i = 0; i < nl; i++){
