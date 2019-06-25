@@ -18,4 +18,4 @@ struct List{
         }
         return remove(node->next, value);
     }
-}
+};

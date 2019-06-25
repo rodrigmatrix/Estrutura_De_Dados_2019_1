@@ -16,6 +16,9 @@
         "__tuple": "cpp",
         "type_traits": "cpp",
         "sstream": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "ios": "cpp",
+        "__string": "cpp",
+        "algorithm": "cpp"
     }
 }
